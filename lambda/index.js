@@ -40,13 +40,26 @@ const HackHourIntentHandler = {
     }
 };
 
+
+// Use to get prices of shop items. Please note values are hardcoded and may not refect updates in cost. They are accurate as of 20/06/2024
 const ShopIntentHandler = {
     canHandle(handlerInput) {
         return Alexa.getRequestType(handlerInput.requestEnvelope) === 'IntentRequest'
             && Alexa.getIntentName(handlerInput.requestEnvelope) === 'ShopIntent';
     },
     handle(handlerInput) {
-        const speakOutput = 'Shop intent detected successfully!';
+        let speakOutput = 'Shop intent detected successfully!';
+        
+        const item = handlerInput.requestEnvelope.request.intent.slots.item.value;
+        speakOutput = item;
+        
+        if (item === "Macbook"){
+            speakOutput = "a macbook costs 400 tickets";
+        } else if (item === "quest 3") {
+            speakOutput = "a quest 3 costs 200 tickets"
+        }
+        
+        
 
         return handlerInput.responseBuilder
             .speak(speakOutput)
