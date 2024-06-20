@@ -10,7 +10,7 @@ const LaunchRequestHandler = {
         return Alexa.getRequestType(handlerInput.requestEnvelope) === 'LaunchRequest';
     },
     handle(handlerInput) {
-        const speakOutput = 'Welcome to hack hour!';
+        const speakOutput = 'Welcome to the Arcade skill! You can ask me about prices in the shop or the time remaining on your session. For transparancy, I am not an official hack club project, and the prices in the shop may not reflect the current price if they have been edited after the 20th of June 2024';
 
         return handlerInput.responseBuilder
             .speak(speakOutput)
@@ -51,16 +51,64 @@ const ShopIntentHandler = {
         let speakOutput = 'Shop intent detected successfully!';
         
         const item = handlerInput.requestEnvelope.request.intent.slots.item.value;
-        speakOutput = item;
         
-        if (item === "Macbook"){
-            speakOutput = "a macbook costs 400 tickets";
-        } else if (item === "quest 3") {
-            speakOutput = "a quest 3 costs 200 tickets"
+        
+        const itemID = handlerInput.requestEnvelope.request.intent.slots.item.slotValue.resolutions.resolutionsPerAuthority[0].values[0].value.id;
+        
+
+
+        if (itemID === "1") {
+            speakOutput = "A macbook air costs 400 tickets";
+        } else if (itemID === "2") {
+            speakOutput = "A meta quest 3 costs 200 tickets";
+        } else if (itemID === "3") {
+            speakOutput = "A bamboo labs a1 mini costs 135 tickets";
+        } else if (itemID === "4") {
+            speakOutput = "A prusa mini plus costs 130 tickets";
+        } else if (itemID === "5") {
+            speakOutput = "A framework 16 costs 400 tickets";
+        } else if (itemID === "6") {
+            speakOutput = "A framework 13 costs 175 tickets";
+        } else if (itemID === "7") {
+            speakOutput = "A framework factory seconds costs 120 tickets";
+        } else if (itemID === "8") {
+            speakOutput = "A logitech mechanical keyboard costs 75 tickets";
+        } else if (itemID === "9") {
+            speakOutput = "A flipper zero costs 70 tickets";
+        } else if (itemID === "10") {
+            speakOutput = "A github backpack costs 50 tickets";
+        } else if (itemID === "11") {
+            speakOutput = "A wacom intuos costs 25 tickets";
+        } else if (itemID === "12") {
+            speakOutput = "An octocat plushie costs 15 tickets";
+        } else if (itemID === "13") {
+            speakOutput = "github keycaps cost 15 tickets for a pack of 8";
+        } else if (itemID === "14") {
+            speakOutput = "A yubikey 5c costs 15 tickets";
+        } else if (itemID === "15") {
+            speakOutput = "A pinecil costs 14 tickets";
+        } else if (itemID === "16") {
+            speakOutput = "A soldering iron with solder costs 8 tickets";
+        } else if (itemID === "17") {
+            speakOutput = "An arcade ticket counter costs 7 tickets";
+        } else if (itemID === "18") {
+            speakOutput = "A multimeter costs 7 tickets";
+        } else if (itemID === "19") {
+            speakOutput = "A breadboard with jumper wires costs 6 tickets";
+        } else if (itemID === "20") {
+            speakOutput = "A logic analyser costs 5 tickets";
+        } else if (itemID === "21") {
+            speakOutput = "A notebook costs 5 tickets";
+        } else if (itemID === "22") {
+            speakOutput = "A domain for 1 year costs 4 tickets";
+        } else if (itemID === "23") {
+            speakOutput = "Open AI credits cost 4 tickets";
+        } else if (itemID === "24") {
+            speakOutput = "Stickers cost 1 ticket for 3 random stickers, or 2 tickets for 1 sticker of your choice";
         }
         
         
-
+        
         return handlerInput.responseBuilder
             .speak(speakOutput)
             //.reprompt('add a reprompt if you want to keep the session open for the user to respond')
@@ -160,7 +208,7 @@ const ErrorHandler = {
         return true;
     },
     handle(handlerInput, error) {
-        const speakOutput = 'Sorry, I had trouble doing what you asked. Please try again.';
+        const speakOutput = 'Sorry, I had trouble doing what you asked. Womp womp.';
         console.log(`~~~~ Error handled: ${JSON.stringify(error)}`);
 
         return handlerInput.responseBuilder
