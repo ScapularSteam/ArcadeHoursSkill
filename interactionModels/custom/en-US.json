@@ -1,0 +1,248 @@
+{
+  "interactionModel": {
+    "languageModel": {
+      "intents": [
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": []
+        },
+        {
+          "slots": [],
+          "name": "HackHourIntent",
+          "samples": [
+            "how long is left",
+            "how long does that fucking racoon say I have left",
+            "what is the time remaining on my timer",
+            "how much time is left on my session",
+            "how long does my session have remaining",
+            "how long do I have left"
+          ]
+        },
+        {
+          "name": "AMAZON.NavigateHomeIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.FallbackIntent",
+          "samples": []
+        },
+        {
+          "slots": [
+            {
+              "name": "item",
+              "type": "item"
+            }
+          ],
+          "name": "ShopIntent",
+          "samples": [
+            "how many tickets would it take to get {item}",
+            "what is the cost of {item}",
+            "how many tickets is an {item} worth",
+            "how many tickets would it take to buy {item}",
+            "how much does a {item} cost",
+            "how much does {item} cost"
+          ]
+        }
+      ],
+      "types": [
+        {
+          "values": [
+            {
+              "name": {
+                "synonyms": [
+                  "macbook air m2",
+                  "macbook air"
+                ],
+                "value": "macbook"
+              }
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "oculus quest 3",
+                  "oculus",
+                  "meta quest 3"
+                ],
+                "value": "quest 3"
+              }
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "bambu labs"
+                ],
+                "value": "bambu labs a1 mini"
+              }
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "prusa",
+                  "prusa mini +"
+                ],
+                "value": "prusa mini"
+              }
+            },
+            {
+              "name": {
+                "value": "framework 16"
+              }
+            },
+            {
+              "name": {
+                "value": "framework 13"
+              }
+            },
+            {
+              "name": {
+                "value": "framework factory secconds"
+              }
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "logitech mx keys",
+                  "keyboard"
+                ],
+                "value": "mechanical keyboard"
+              }
+            },
+            {
+              "name": {
+                "value": "flipper zero"
+              }
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "github backpack",
+                  "miir backpack",
+                  "miir",
+                  "backpack"
+                ],
+                "value": "invertocat backpack"
+              }
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "graphics tablet",
+                  "wacom"
+                ],
+                "value": "wacom intuos s"
+              }
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "plushie"
+                ],
+                "value": "octocat plushie"
+              }
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "keycaps"
+                ],
+                "value": "github keycaps"
+              }
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "two factor authentication key",
+                  "authenticator key"
+                ],
+                "value": "yubikey"
+              }
+            },
+            {
+              "name": {
+                "value": "pinecil"
+              }
+            },
+            {
+              "name": {
+                "value": "soldering iron"
+              }
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "hack hour clock",
+                  "clock",
+                  "ticket counter"
+                ],
+                "value": "arcade ticker counter"
+              }
+            },
+            {
+              "name": {
+                "value": "multimeter"
+              }
+            },
+            {
+              "name": {
+                "value": "breadboard"
+              }
+            },
+            {
+              "name": {
+                "value": "logic analyzer"
+              }
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "github notebook"
+                ],
+                "value": "notebook"
+              }
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "domain for one year",
+                  "custom domain"
+                ],
+                "value": "domain"
+              }
+            },
+            {
+              "name": {
+                "value": "open a. i. credits"
+              }
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "specific sticker"
+                ],
+                "value": "sticker of my choice"
+              }
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "random stickers"
+                ],
+                "value": "pile of stickers"
+              }
+            }
+          ],
+          "name": "item"
+        }
+      ],
+      "invocationName": "hack hour"
+    }
+  }
+}
